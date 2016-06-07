@@ -1,0 +1,48 @@
+# OS X
+.DS_Store*
+Icon?
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+*~
+
+# npm
+/node_modules
+*.log
+*.gz
+
+# bower
+client/bower_components
+
+# Compiled output
+# core.css - will re-ignore this once the build does LESS -> CSS
+
+# Testing
+coverage/
+npmLicenses.json
+bowerLicenses.json
+
+# IDEs
+.idea/
+nbproject/
+*.sublime-project
+*.sublime-workspace
+
+/mongoConnectionString.json
+/client/css/core.css
+/client/css/core.css.map
+/server/sessions/*.json
+/ow-auth-config.js
+/server/ssl/*.pem
+/error-email-config.js
+/logging-config.js
+/build-properties.json
+dist
+
+*.min.*
