@@ -1,0 +1,80 @@
+
+<!-- Profile information column -->
+<div class="container-fluid">
+<h1>Welcome <span data-bind="text: currentuser.firstname"></span>!</h1>
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title pull-left"><a href="#!/profile">Profile Information</a></h2>
+      	<div class="clearfix"></div>
+      </div>
+
+      <!-- User information -->
+      <div class="panel-body" style="padding:0">
+          <div class="panel panel-default" style="border: 0; box-shadow: none; border-bottom: 1px solid #ddd;margin: 0" >
+            <div class="panel-body">
+              <h5 class=" pull-left"><span data-bind="text:currentuser.firstname"></span> <span data-bind="text:currentuser.lastname"> </span> </h5>
+              <div class="clearfix"></div>
+              <div  data-bind="foreach: userInfo" >
+                Phone: <span data-bind="text:phone"> </span> </br>
+                Zip Code: <span data-bind="text:zipcode"> </span> </br>
+              </div>
+          </div> <!-- END panel body -->
+      </div> <!-- END USER info -->
+      <div data-bind="if: childInfo().length>0">
+        <!-- for each child -->
+        <div class="panel-body" style="padding:0" data-bind="foreach: childInfo" >
+            <div class="panel panel-default" style="border: 0; box-shadow: none; border-bottom: 1px solid #ddd;margin: 0">
+              <div class="panel-body">
+                <h5 class=" pull-left">Child: <span data-bind="text:firstname"></span> <span data-bind="text:lastname"> </span> </h5>
+                <div class="clearfix"></div>
+                Birthday: <span data-bind="date:{value:birthday, format:'MM/DD/YYYY'}"> </span> </br>
+                Phone: <span data-bind="text:phone"> </span> </br>
+                Family: 
+                <!-- ko foreach: $data.parents -->
+                  <div class='badge' data-bind="text:firstname"> </div> <span> </span>
+                <!-- /ko -->
+                </br>
+                Notes: <span data-bind="text:notes"> </span> </br>
+              </div>
+            </div>
+          </div> <!-- END For each Child -->
+        </div> <!-- If childInfo.length > 0 -->
+      </div> 
+    </div>
+	</div> <!-- END col-md6 -->
+
+<!-- Recent Messages column -->
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title pull-left"><a href="#!/inbox">Recent Messages</a></h2>
+      	<div class="clearfix"></div>
+      </div>
+      <div class="panel-body" style="height: 500px" >
+      	<!-- Notification of new messages -->
+        <div class="panel panel-default">
+  				<div class="panel-body">
+  				<span class="glyphicon glyphicon-flag" aria-hidden="true"></span>&emsp; <a href="#!/inbox">You have <span data-bind="text: nNewMessages"> </span> new message(s).</a>
+  				</div>
+        </div>
+		    <!-- Messages in Inbox -->
+        <table data-bind="click: goToInbox" style="cursor: pointer" class="table">
+          <thead>
+            </th><th>From</th><th>Subject</th><th>Date</th></tr>
+          </thead>
+          <tbody data-bind="foreach: inboxData">
+             <tr data-bind="style: { background: unread == 0 ? 'ghostwhite' : 'none'}">
+                <td data-bind="text: from"></td>
+                <td data-bind="text: subject"></td>
+                <td data-bind="date: {value: sent, format: 'MM/DD/YYYY hh:mm a'}"></td>             
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+	</div> <!-- Div column -->
+</div> <!-- Div row -->
+</div> <!-- Div container fluid -->

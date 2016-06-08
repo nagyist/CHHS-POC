@@ -1,0 +1,55 @@
+[{ "username" : "connie@me.com" ,
+"userinfo" : {"zipcode": "94117",
+            "phone" : "123-344-2222"},
+"family" :[
+  {"firstname": "Gma",
+  "lastname":"Smith", 
+  "relationToUser":"Mother",
+  "phone": "111-222-4444",
+  "email": "gma@me.com"},
+	{"firstname": "Bobby",
+  "lastname":"Smith", 
+  "relationToUser":"Husband",
+  "phone": "222-333-4444",
+  "email": "bobby@me.com"}],
+"children" : 
+  [{"firstname": "Billy",
+    "lastname":"Smith",
+    "birthday":"Nov 1, 2000",
+    "phone":"111-123-4556",
+    "family":[{"firstname":"justin"}, {"firstname":"billy"}],
+    "notes": "Billy has a learning disability"},
+	{"firstname": "Bob",
+  "lastname":"Smith",
+  "birthday":"Dec 1, 2000",
+  "phone":"999-123-4556",
+  "family":[{"firstname":"justin"}, {"firstname":"billy"}],
+  "notes":"Bobby loves pizza"},
+  {"firstname": "Bob",
+  "lastname":"Smith",
+  "birthday":"Dec 1, 2000",
+  "phone":"999-123-4556",
+  "family":[{"firstname":"justin"}, {"firstname":"billy"}],
+  "notes":"Bobby loves pizza"}
+   ],
+"caseworker" : 
+  {"firstname": "Nancy",
+  "lastname":"Adams",
+  "phone":"123-456-7806",
+  "email":"nancy.adams.chhs@caseworker.com"
+  }
+},
+{ "username" : "nancy.adams.chhs@caseworker.com" ,
+"userinfo" : {"zipcode": "94117",
+            "phone" : "123-344-2222"},
+"family" :[],
+"children" : 
+  [],
+"caseworker" : 
+  {"firstname": "Connie",
+  "lastname":"Me",
+  "phone":"111-222-3333",
+  "email":"connie@me.com"
+  }
+}
+]

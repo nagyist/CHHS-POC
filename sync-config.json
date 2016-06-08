@@ -1,0 +1,6 @@
+{
+  "client": ["**/*.js", "**/*.html", "**/*.css", "fonts/**", "img/**", "!bower_components/**", "bower_components/jreject/images/**", "bower_components/lodash/lodash.js", "bower_components/**/.bower.json"],
+  "server": ["**"],
+  "koe": ["**"],
+  "config": ["*.json", "web.config", "*.nocommit.*", "config.js"]
+}

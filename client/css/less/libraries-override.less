@@ -1,0 +1,71 @@
+//
+// Libraries Override
+//      Since we import several external libraries
+//      in bower_components (which we can't touch),
+//      these styles provide minimal overrides 
+//      where needed.
+// --------------------------------------------------
+
+
+// Bootstrap Datepicker overrides
+// --------------------------------------------------
+
+.datepicker table tr td, .datepicker table tr th {
+    border-radius: 0px;
+}
+
+
+// Select2 overrides
+// --------------------------------------------------
+
+// Single-select
+
+.select2-container .select2-choice {
+    border-radius: @border-radius-base;
+    border-color: #bbb;
+    height: 27px; // Matches computed height of other inputs
+    line-height: 25px;
+}
+.select2-container .select2-choice .select2-arrow {
+    border-radius: 0 @border-radius-base @border-radius-base 0;
+}
+.select2-dropdown-open .select2-choice {
+    border-bottom-color: transparent;
+}
+
+// Multiple select 
+
+.select2-container-multi .select2-choices {
+    min-height: 25px;
+    border-color: #bbb;
+    border-radius: @border-radius-base;
+}
+.select2-container-multi .select2-choices .select2-search-field input {
+    padding: 4px 8px 1px;
+    line-height: 18px;
+}
+.select2-container-multi .select2-choices .select2-search-choice {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.select2-search-choice-close {
+    top: 3px;
+}
+
+// Active states
+
+.select2-container-active .select2-choice, 
+.select2-container-active .select2-choices {
+    border: 1px solid @input-border-focus;
+}
+.select2-drop-active {
+    border: 1px solid @input-border-focus;
+    border-top: none;
+}
+.select2-container-multi.select2-container-active .select2-choices {
+    border: 1px solid @input-border-focus;
+}
+
+.select2-results .select2-highlighted {
+    background: @link-color;
+}

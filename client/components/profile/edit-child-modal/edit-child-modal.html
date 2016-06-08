@@ -1,0 +1,96 @@
+<!-- Child Modal -->
+<div class="modal fade" id="childModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"> Edit Information </h4>
+            </div>
+            <div class="modal-body">
+                <!-- Tabs Defined -->
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><a data-toggle="tab" href="#childInfoTab">Child Information</a></li>
+                    <li role="presentation"><a data-toggle="tab" href="#careManagementInfoTab">Care Notes</a></li>
+                </ul>
+
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <!-- Edit Child Info Tab -->
+                    <div id="childInfoTab" class="tab-pane active">
+                        </br>
+                        <form id="editChildForm" role="form" class="form-horizontal" data-bind="submit: saveChildInfo" onkeypress="return event.keyCode != 13;">
+                            <!-- First Name -->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="inputFirstName">First Name *</label>
+                                <div class="col-sm-10">
+                                    <input required type="text" id="inputFirstName" name="childfirstname" class="form-control" data-bind="value: childFirstNameBeingEdited" required autofocus>
+                                </div>
+                            </div>
+                            <!-- Last Name -->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Last Name</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" data-bind="value: childLastNameBeingEdited">
+                                </div>
+                            </div>
+                            <!-- Birthday -->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Birthday</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="date" data-bind="value:childBirthdayBeingEdited">
+                                </div>
+                            </div>
+                            <!-- Phone -->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Phone</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" data-bind="value:childPhoneBeingEdited">
+                                </div>
+                            </div>
+                            <!-- For each Additional Family -->
+                            <div data-bind="foreach:childFamilyBeingEdited">
+                                <div class="form-group controls">
+                                    <label class="col-sm-2 control-label">Guardian</label>
+                                    <div class="controls col-sm-10">
+                                        <div class="input-group">
+                                            <input class="form-control" data-bind="value:firstname">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-trash" style="cursor:pointer" data-bind="click: $parent.removeFamily"></span></span>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="button" class="btn btn-default" data-bind="click:addFamily">Add Additional Guardians</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-1 col-sm-10">
+                                    <span> <b> * Required </b> </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Care Manager Tab -->
+                    <div id="careManagementInfoTab" class="tab-pane">
+                        </br>
+                        <form id="editChildNotesForm" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Notes</label>
+                                <div class="col-sm-10">
+                                     <textarea class="form-control" rows="10" data-bind="textInput:childCareNotes" placeholder="Describe your child's personal strengths, his/her outstanding characteristics. Please include any relevant information about his/her relationship with siblings and peers."></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-defult" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" form='editChildForm'>Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

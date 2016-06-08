@@ -1,0 +1,55 @@
+{{!--
+    This is the main index page into which we should put our application content. It will be rendered inside the body
+    tag of layouts/main.hbs
+
+    For more information see http://handlebarsjs.com/
+--}}
+
+<ow-navbar params="activePage$: activePage$, outputHasSubNav: pageHasSubNav"></ow-navbar>
+
+<div class="fixed-footer-page-content col-sm-12">
+    {{! We use 'visible: true' and 'display:none' in order to prevent the UI from flickering on page load, whilst KO is setting up the bindings. See http://stackoverflow.com/questions/14583018/knockout-flickering-issue. }}
+    <div data-bind="page: { id: 'home', name: 'Home', title: 'CHHS: Welcome!', role: 'start' }, visible: true" style="display:none;">
+        <div data-bind="if: $page.isVisible">
+            <home></home>
+        </div>
+    </div>
+
+    {{! Second page }} 
+    <div data-bind="page: { id: 'profile', name: 'Profile', title: 'CHHS: Profile' }, visible: true" style="display:none"> 
+        <div data-bind="if: $page.isVisible"> 
+            <profile></profile>
+        </div>
+    </div>
+
+    {{! Third page }} 
+    <div data-bind="page: { id: 'inbox', name: 'Inbox', title: 'CHHS: Inbox' }, visible: true" style="display:none"> 
+        <div data-bind="if: $page.isVisible"> 
+            <inbox></inbox>
+        </div>
+    </div>
+
+    {{! Third page }} 
+    <div data-bind="page: { id: 'search', name: 'Search Facilities', title: 'CHHS: Search' }, visible: true" style="display:none"> 
+        <div data-bind="if: $page.isVisible"> 
+            <search></search>
+        </div>
+    </div>
+
+    {{! Fourth page }} 
+    <div data-bind="page: { id: 'careplan', name: 'Care Management', title: 'CHHS: Care Management' }, visible: true" style="display:none"> 
+        <div data-bind="if: $page.isVisible"> 
+            <careplan></careplan>
+        </div>
+    </div>
+
+    {{! This should be removed from the page template based on user permissions }}
+    <div data-bind="page: {id: 'status', name: 'Status', title: 'CHHS: Status', omitFromNav: true }, visible: true" style="display: none">
+        <div data-bind="if: $page.isVisible">
+            <status></status>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+<ow-footer class="fixed-footer-footer"></ow-footer>

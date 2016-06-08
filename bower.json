@@ -1,0 +1,41 @@
+{
+  "name": "owg-chhs-poc",
+  "version": "1.0.0",
+  "description": "Developed for the CHHS RFI-75001",
+  "main": "client/index.html",
+  "keywords": [
+    "chhs"
+  ],
+  "authors": [
+    "connie.cheung@oliverwyman.com",
+    "patricia.ho@oliverwyman.com",
+    "edmund.olson-morgan@oliverwyman.com"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.15",
+    "jquery": "~2.1.3",
+    "text": "~2.0.13",
+    "bootstrap": "~3.3.1",
+    "pagerjs": "~1.0.1",
+    "fontawesome": "~4.3.0",
+    "select2": "~3.5.2",
+    "select2-bootstrap-css": "~1.4.6",
+    "bootstrap-datepicker": "~1.4.0",
+    "knockout": "~3.3.0",
+    "jreject": "~1.1.4",
+    "leaflet": "^0.7.7",
+    "mapbox.js": "^2.4.0",
+    "lodash": "~4.11.2",
+    "requirejs-plugins": "^1.0.3",
+    "fullcalendar": "^2.7.3"
+  }
+}

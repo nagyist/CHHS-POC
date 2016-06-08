@@ -1,0 +1,62 @@
+<!-- Container for page --> 
+<div class="container-fluid">
+<h1>Search Facilities</h1>
+
+<!-- Search bar -->
+<div class="row">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-12">
+        <form class="form-inline" onSubmit="return false;">
+          <!-- Zip code text box for user entry -->
+          <div class="form-group">
+            <label>Zip Code:</label> 
+            <input type="text" class="form-control" data-bind="value: mapLocation">
+          </div>
+          <!-- Checkbox for user to search for open facilities only if checked -->
+          <div class="form-group">
+            <label><input type="checkbox" data-bind="checked: searchOpenFacilities" />
+            Open facilities only</label> 
+          </div>
+          <div class="form-group pull-right">
+            <button data-bind="click: runSearch" type="button" class="btn btn-primary">Search </button>
+            <button data-bind="click: clearSearch" type="button" class="btn btn-default">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12"> 
+      </br>
+        <p align="right">Facilities found: <span data-bind="text: markerData().length"></span> </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12" style="overflow-y:auto; overflow-x:auto;">
+        <table class="table table-hover">
+          <!-- Display list of facility locations in table -->
+          <thead>
+              <tr><th>Facility Name</th><th>Address</th><th>City</th><th>Status</th><th>Admin</th><th>Phone Number</th></tr>
+          </thead>
+          <tbody data-bind="foreach: markerData">
+              <tr data-bind="event: {mouseenter: $parent.popupMarker, mouseleave: $parent.popdownMarker}">
+                  <td data-bind="text: facility_name"></td>
+                  <td data-bind="text: facility_address"></td>
+                  <td data-bind="text: facility_city"></td>
+                  <td data-bind="text: facility_status"></td>
+                  <td data-bind="text: facility_administrator"></td>
+                  <td data-bind="text: facility_telephone_number"></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <!-- Display Map -->
+      <div id="mapid"  style="height: 400px"></div>
+    </div>
+  </div>
+</div>
+  

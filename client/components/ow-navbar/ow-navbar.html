@@ -1,0 +1,51 @@
+<nav class="navbar navbar-default navbar-static-top">
+    
+    <!-- Primary navigation -->
+    <div class="navbar-primary">
+        <div class="container-fluid"> 
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">CHHS</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav" data-bind="foreach: $root.$__page__.children">
+                    <!-- ko ifnot: val('omitFromNav') -->
+                        <li data-bind="css: {active: isVisible}">
+                            <a href="#" data-bind="page-href: $data, text: val('name')"></a>
+                        </li>
+                    <!-- /ko -->
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Log out</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Secondary Navigation -->
+
+    <!-- ko if: navActivePrimaryHasChildren -->
+        <div class="navbar-secondary">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav" data-bind="foreach: { data: navActivePrimaryPage().children, as: 'subpage' }">
+                        <!-- ko ifnot: val('omitFromNav') -->
+                            <li data-bind="css: { active: isVisible }">
+                                <a href="#" data-bind="page-href: subpage, text: subpage.val('name')"></a>
+                            </li>
+                        <!-- /ko -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <!-- /ko -->
+
+</nav>

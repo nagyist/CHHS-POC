@@ -1,0 +1,1 @@
+Put KO bindings in here.  All *.js files will be automatically loaded by client/app.js.

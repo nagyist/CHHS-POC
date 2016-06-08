@@ -1,0 +1,61 @@
+
+<!-- Profile information column -->
+<div class="container-fluid">
+<h2>Care Management</h2>
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title pull-left"><a href="#!/profile">Case Plan Requirements</a></h4>
+      	<div class="clearfix"></div>
+      </div>
+
+     <!-- for each requirement category -->
+      <div class="panel-body" data-bind="foreach: requirements" style="height:650px; overflow-y:auto; overflow-x:hidden;">
+        <h5 data-bind="text:title"></h5>
+        <div class="clearfix"></div>
+        <ul>
+          <li><strong>Goal:</strong>&nbsp;<span data-bind="text:goal"></span></li>
+          <li><strong>Requirement:</strong>&nbsp;<span data-bind="text:requirement"></span></li>
+          <li><strong>Duration:</strong>&nbsp;<span data-bind="text:duration"></span></li>
+          <li><strong>Approval required:</strong>&nbsp;<span data-bind="text:approval"></span></li>
+          <li><strong>Progress:</strong>&nbsp;<span data-bind="text:progress"></span></li>
+          <li><strong>Notes:</strong>&nbsp;<span data-bind="text:notes"></span></li>
+        </ul>
+      </div> <!-- div panel-body -->
+    </div> <!-- div panel -->
+  </div> <!-- div column -->
+
+<!-- Calendar column -->
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title pull-left"><a href="#!/search">Upcoming Appointments</a></h4>
+        <div class="clearfix"></div>
+      </div>
+      <div class="panel-body">
+        <!-- Display calendar -->
+        <div id='calendar'></div> <br>
+        <!-- Display event dates in table -->        
+        <div style="height:200px; overflow-y:auto; overflow-x:auto;">
+          <table class="table">
+            <thead>
+              <tr><th>Event</th><th>Date</th><th>Start Time</th><th>End Time</th></tr>
+            </thead>
+            <tbody data-bind="foreach: futureAppointments">
+              <tr>
+                <td data-bind="text: title"></td>
+                <td data-bind="date: { value: start, format: 'MM/DD/YYYY' }"></td>
+                <td data-bind="date: { value: start, format: 'h:mm a' }"></td>
+                <td data-bind="date: { value: end, format: 'h:mm a' }"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        </div>
+      </div>
+    </div> <!-- div column -->
+	</div> <!-- div row -->
+</div> <!-- div container -->

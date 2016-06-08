@@ -1,0 +1,66 @@
+//
+// Thumbnails
+// --------------------------------------------------
+
+
+// Mixin and adjust the regular image class
+.thumbnail {
+  display: block;
+  margin-bottom: @line-height-computed;
+  line-height: @line-height-base;
+  background-color: @thumbnail-bg;
+  border: 1px solid @thumbnail-border;
+  border-radius: @thumbnail-border-radius;
+  .transition(border .2s ease-in-out);
+    .box-shadow(0 1px 2px rgba(0,0,0,.075));
+    
+  > img,
+  a > img {
+    .img-responsive;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // [converter] extracted a&:hover, a&:focus, a&.active to a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active
+
+  // Image captions
+  .caption {
+    padding: @thumbnail-caption-padding;
+    color: @thumbnail-caption-color;
+  }
+  .thumbnail-content {
+    padding: @thumbnail-caption-padding;
+        
+        h4 {
+            font-weight: bold;
+            font-size: @font-size-base;
+            margin-top: 0px;
+        }
+        span {
+            display: block;
+            &.small {
+                font-size: @font-size-small;
+            }
+        }
+        
+  }
+  .thumbnail-footer{
+    border-top: 1px solid @thumbnail-border;
+    border-radius: 0px 0px @thumbnail-border-radius @thumbnail-border-radius;
+    #gradient > .vertical(@start-color: @thumbnail-bg, @end-color: darken(@thumbnail-bg, 8%));
+    padding: @thumbnail-padding;
+    text-align: right;
+    
+    .fa {
+        padding: 0 4px;
+    }
+    
+  }
+}
+
+// Add a hover state for linked versions only
+a.thumbnail:hover,
+a.thumbnail:focus,
+a.thumbnail.active {
+  border-color: @link-color;
+}

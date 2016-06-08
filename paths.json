@@ -1,0 +1,10 @@
+{
+  "public": [
+    "/login",
+    "/register",
+    "/logout",
+    "/bower_components/bootstrap/dist/css/bootstrap.min.css",
+    "/status",
+    "/img/chhs.jpg"
+  ]
+}

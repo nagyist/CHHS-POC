@@ -1,0 +1,88 @@
+{
+  "name": "owg-chhs-poc",
+  "version": "1.0.0",
+  "description": "Developed for the CHHS RFI-75001",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/owlabs/CHHS-POC.git"
+  },
+  "private": true,
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "test": "npm run unitTest && npm run testCoverage",
+    "unitTest": "node ./node_modules/mocha/bin/mocha -R spec test/unit",
+    "integrationTest": "./node_modules/.bin/mocha test/integration",
+    "testCoverage": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha test/unit",
+    "postinstall": "bower install",
+    "heroku-postbuild": "grunt buildProperties minify"
+  },
+  "keywords": [
+    "chhs"
+  ],
+  "author": [
+    "connie.cheung@oliverwyman.com",
+    "patricia.ho@oliverwyman.com",
+    "edmund.olson-morgan@oliverwyman.com"
+  ],
+  "dependencies": {
+    "assert": "^1.4.0",
+    "bluebird": "^3.3.4",
+    "body-parser": "^1.10.1",
+    "bower": "^1.4.1",
+    "bower-license": "^0.4.1",
+    "concat-stream": "^1.5.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^1.2.0",
+    "cookie-parser": "^1.4.1",
+    "dotenv": "^2.0.0",
+    "express": "^4.11.0",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.10.2",
+    "fs": "0.0.2",
+    "glob": "^6.0.1",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-less": "^1.0.0",
+    "grunt-contrib-requirejs": "^0.4.4",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-eslint": "^17.3.1",
+    "grunt-express-server": "^0.4.19",
+    "grunt-force-task": "^1.0.0",
+    "grunt-open": "^0.2.3",
+    "grunt-sync": "^0.5.2",
+    "grunt-text-replace": "^0.4.0",
+    "helmet": "^0.14.0",
+    "load-grunt-configs": "^0.4.3",
+    "load-grunt-tasks": "^3.4.1",
+    "lodash": "^4.11.1",
+    "moment": "^2.10.3",
+    "mongodb": "^2.1.20",
+    "newrelic": "^1.27.2",
+    "nlf": "^1.3.2",
+    "node-jquery-param": "0.0.2",
+    "node-uuid": "^1.4.2",
+    "nodemailer": "^1.4.0",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "passport-saml": "^0.12.0",
+    "q": "^1.2.0",
+    "winston": "^2.1.1",
+    "xmlbuilder": "^4.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "eslint": "^1.10.2",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5",
+    "proxyquire": "^1.7.9",
+    "rewire": "^2.5.1",
+    "sinon": "^1.17.4"
+  },
+  "engines": {
+    "node": "4.0.0"
+  }
+}

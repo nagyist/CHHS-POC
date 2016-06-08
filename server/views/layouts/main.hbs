@@ -1,0 +1,86 @@
+{{!--
+    This is the default layout applied to any page sent from the server via res.render()
+
+    For more information see http://handlebarsjs.com/
+--}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/owlfavicon.ico" type="image/x-icon"/>
+    <title>CHHS</title>
+    {{#if minify}}
+        <link rel="stylesheet" href="/css/site.min.css">
+    {{else}}
+        {{! Latest compiled CSS }}
+        <link rel="stylesheet" href="/css/core.css">
+        {{! Application-specific CSS }}
+        <link rel="stylesheet" href="/css/custom.css">
+        {{! jQuery browser-reject CSS }}
+        <link rel="stylesheet" href="/bower_components/jreject/css/jquery.reject.css">
+        <link rel="stylesheet" href="/bower_components/mapbox.js/mapbox.css">
+        <link rel="stylesheet" href="/bower_components/fullcalendar/dist/fullcalendar.css">
+        <!-- <link rel="stylesheet" href="/css/uswds.css"> -->
+
+        <script src="/js/fixConsoleForOldBrowsers.js"></script>
+    {{/if}}
+    {{! HTML5 shim, Respond.js, and incompatibility warning for IE8 support of HTML5 elements and media queries }}
+    {{! WARNING: Respond.js doesn't work if you view the page via file:// }}
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script type="text/javascript">
+        alert('Your browser is out of date, and may not be compatible with our website. Please download Google Chrome, Mozilla Firefox, or Internet Explorer version 9 or later.')
+    </script>
+    <![endif]-->
+</head>
+
+<body data-bind="css: { 'has-subnav': pageHasSubNav }" class="fixed-footer">
+
+    <div class="fixed-footer-wrapper">
+        {{! The content of the page is inserted here }}
+        {{{body}}}
+    </div>
+    {{! Inject livereload script if we are in dev, otherwise this content is entirely excluded from the page }}
+    {{#if livereload}}
+        {{!--
+            We data-bind the "src" here (even though it's not dynamic) because the HTML will get rendered by the page
+            before we apply bindings to the ko viewmodel, which triggers the attempted load of the live-reload script.
+            Putting src in a data-bind attribute means the script that renders on page load (before apply-bindings gets
+            called) doesn't have a src tag, so live-reload is not loaded.
+        --}}
+        <script data-bind="attr: { src: 'http://localhost:35729/livereload.js?snipver=1' }" type="text/javascript"></script>
+    {{/if}}
+
+
+    {{#if minify}}
+        <script src="/app.min.js"></script>
+    {{else}}
+        <script src="/bower_components/requirejs/require.js"></script>
+
+        <!-- Must load this synchronously here, or it may not be ready when the app.js is loaded below. -->
+        <script src="/require-config.js"></script>
+
+        <script>
+            requirejs(['js/app']);
+        </script>
+    {{/if}}
+
+    {{!--
+        We can embed data as inline scripts by including an array of { name: 'something', content: [a JSON object] }
+        objects in the page model, as the 'defines' property. These can then be accessed by the main application
+        code by including them in the module definition:
+        define(['something'], function (theDataWeWanted) {... etc.
+        Note that we need to exclude the dependency from the minified output, as it won't be accessible at compile time.
+        This can be done by creating an inline-defines.json file in the application root directory, containing an array
+        of the names used.
+    --}}
+    {{#each defines}}
+        {{> define this}}
+    {{/each}}
+</body>
+
+</html>

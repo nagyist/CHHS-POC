@@ -1,0 +1,33 @@
+<!-- Container for page -->
+<div class="container-fluid">
+
+<h1>Messages</h1>
+
+<div class="row">
+  <div class="col-md-2">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation"><a class="btn" data-bind="click: openComposeModal">Compose New</a></li>
+      <li role="presentation" class="active"><a href="#inbox" data-toggle="pill" data-bind="click: inboxButton">Inbox <span class="badge" data-bind="text: nNewMessages"></span></a></li>
+      <li role="presentation"><a href="#sent" data-toggle="pill" data-bind="click: sentInboxButton">Sent Messages</a></li>
+    </ul>
+  </div>
+
+  <div class="col-md-10">
+  
+  <!-- Content -->
+  <div class="tab-content">
+    <!-- Inbox -->
+    <div id="inbox" class="tab-pane active"  style="overflow-y:auto; overflow-x:auto;">
+        <read-inbox params="isViewingInbox: isViewingInbox, isReadingMessage: isReadingMessage"> </read-inbox>
+    </div>
+    <!-- Sent messages -->
+    <div id="sent" class="tab-pane" style="overflow-y:auto; overflow-x:auto;">
+      <read-sent-inbox params="isViewingSentMessages: isViewingSentMessages, isReadingSentMessage: isReadingSentMessage"></read-sent-inbox>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+<compose-message></compose-message>
+</div>

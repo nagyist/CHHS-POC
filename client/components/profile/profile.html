@@ -1,0 +1,90 @@
+<div class="container-fluid">
+
+<h1><span data-bind="text: currentuser.firstname"></span>'s Profile</h1>
+<br>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <!-- User's Profile Info -->
+      <div class="panel-heading">
+        <h3 class="panel-title"> <span data-bind="text: currentuser.firstname"></span> <span data-bind="text: currentuser.lastname"></span>  
+          <div class="glyphicon glyphicon-pencil pull-right" style="cursor: pointer" data-bind="click: openUserModal"></div>
+        </h3>
+        <div class="clearfix"></div>
+      </div>
+      <div class="panel-body" data-bind="if:userInfo">
+        Phone: <span data-bind="text:userInfo().phone"> </span> </br>
+        Zip Code: <span data-bind="text:userInfo().zipcode"> </span> </br>
+      </div>
+   </div>
+   <div class="panel panel-default">
+    <!-- Case worker's Info -->
+      <div class="panel-heading">
+        <h3 class="panel-title">Case Worker</h3>
+      </div>
+      <div class="panel-body" data-bind="if: caseWorkerInfo">
+        Name: <span data-bind="text: caseWorkerInfo().firstname"> </span> <span data-bind="text: caseWorkerInfo().lastname"> </span> </br>
+        Phone: <span data-bind="text: caseWorkerInfo().phone"> </span> </br>
+      </div>
+   </div>
+ </div>
+  <div class="col-md-4">
+    <!-- Child Information -->
+  	<div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Child Information
+        <div class="glyphicon glyphicon-plus pull-right" style="cursor: pointer" data-bind="click: addChild" ></div>
+        </h3>
+      </div>
+      <!-- for each child -->
+      <div class="panel-body" data-bind="foreach: childInfo" style="padding: 0;">
+          <div class="panel panel-default" style="border: 0; box-shadow: none; border-bottom: 1px solid #ddd;margin: 0" >
+            <div class="panel-body">
+              <h5 class="pull-left"><span data-bind="text:firstname"></span> <span data-bind="text:lastname"> </span> </h5>
+              <div class="glyphicon glyphicon-pencil pull-right " style="cursor: pointer; margin-left:10px" data-bind="click: $parent.openChildModal"></div>
+              <div class="glyphicon glyphicon-trash pull-right" style="cursor:pointer" data-bind="click: $parent.removeChild"></div>
+              <div class="clearfix"></div>
+              Birthday: <span data-bind="date:{value:birthday, format:'MM/DD/YYYY'}"> </span> </br>
+              Phone: <span data-bind="text:phone"> </span> </br>
+              Family: 
+              <!-- ko foreach: $data.family -->
+                <div class='badge' data-bind="text:firstname"> </div> <span> </span>
+              <!-- /ko -->
+            </br>
+              Notes: <span data-bind="text:notes"> </span> </br>
+            </div>
+
+          </div>
+      </div> <!-- END For each Child -->
+    </div>
+  </div>
+  <div class="col-md-4">
+   <div class="panel panel-default">
+    <!-- Family Information -->
+      <div class="panel-heading">
+        <h3 class="panel-title">Additional Caretakers
+        <div class="glyphicon glyphicon-plus pull-right" style="cursor: pointer" data-bind="click: addFamily" ></div>
+        </h3>
+      </div>
+      <div class="panel-body" data-bind="foreach: familyInfo" style="padding: 0;">
+          <div class="panel panel-default" style="border: 0; box-shadow: none; border-bottom: 1px solid #ddd;margin: 0">
+            <div class="panel-body">
+              <h5 class=" pull-left"><span data-bind="text:firstname"></span> <span data-bind="text:lastname"> </span> </h5>
+              <div class="glyphicon glyphicon-pencil pull-right" style="cursor: pointer; margin-left:10px" data-bind="click: $parent.openFamilyModal"></div>
+              <div class="glyphicon glyphicon-trash pull-right" style="cursor:pointer" data-bind="click: $parent.removeFamily"></div>
+              <div class="clearfix"></div>
+              Relation: <span data-bind="text:relationToUser"> </span> </br>
+              Email: <span data-bind="text:email"> </span> </br>
+              Phone: <span data-bind="text:phone"> </span> </br>
+            </div>
+          </div>
+      </div> <!-- END For each Family -->
+    </div>
+  </div>
+ 
+</div>
+</div>
+
+<edit-user-modal params="user: userToEdit"></edit-user-modal>
+<edit-family-modal params="family: familyToEdit, familyToEditIndex: familyIndex"></edit-family-modal>
+<edit-child-modal params="child: childToEdit, childToEditIndex: childIndex"></edit-child-modal>
