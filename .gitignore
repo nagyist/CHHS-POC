@@ -46,3 +46,4 @@ nbproject/
 dist
 
 *.min.*
+/.env
