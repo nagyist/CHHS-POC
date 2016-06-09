@@ -15,20 +15,22 @@ Key features include:
 
 ## Approach Overview
 
-The following is a summary of the approach used by Oliver Wyman Labs to create the working prototype. Please see “Oliver Wyman RFI-75001 Technical Approach Documentation and Design Assets.pdf” in the "documentation" folder for comprehensive documentation of the approach and requirements, including screenshots and detailed notes. 
+The following is a summary of the approach used by Oliver Wyman Labs to create the working prototype. Please see “Oliver Wyman RFI-75001 Technical Approach Documentation and Design Assets.pdf” in the "documentation" folder for comprehensive documentation of the approach, including screenshots and detailed notes. 
 
-Oliver Wyman Labs applies innovative approaches to technology to drive business impact for our clients. The mission of Oliver Wyman Labs is to help clients unleash the power of information they already have or could capture, and through that, drive competitive advantage and sustained impact. Oliver Wyman Labs uses agile development principles to collaboratively evolve solutions through development and delivery with continuous, incremental improvements via rapid and flexible iterations.
+### About us: 
 
-The Oliver Wyman Labs team utilized human-centered design techniques to create the prototype design and improve the user experience. The team worked collaboratively to develop multiple iterations of the prototype with continuous planning, testing and integration, while incorporating feedback from usability testing.
+Oliver Wyman Labs applies innovative approaches to technology to drive business impact for our clients. The mission of Oliver Wyman Labs is to help clients unleash the power of information they already have or could capture, and through that, drive competitive advantage and sustained impact. Oliver Wyman Labs uses agile development principles to collaboratively evolve solutions through development, delivering continuous, incremental improvements.
+
+Oliver Wyman Labs used human-centered design techniques to create the prototype design. The team worked collaboratively to develop multiple iterations of the prototype, incorporating feedback from interviews and usability testing.
 
 ### Project organization: 
 
-* A multi-disciplinary and collaborative team was assembled to design and complete the prototype, including a Product Manager, Project Leader, Delivery Manager, Frontend Developers, User Researcher, Backend Developers, and a DevOps Engineer. Profiles of all team members are provided in the appendix of the documentation PDF.
+* A multi-disciplinary and collaborative team was assembled to design and complete the prototype, including a Product Manager, Project Leader, Delivery Manager, Frontend Developers, User Researcher, Backend Developers, and a DevOps Engineer. Profiles of all team members are provided in the documentation PDF.
 * After planning the design approach and technical requirements, the team conducted three one-week sprint cycles to complete development and testing.
 
 ### Human-centered design approach:
 
-Four human-centered design techniques were used: Interviews, secondary research, storyboarding, and usability testing. People were included throughout the design process, with their feedback incorporated into multiple iterations of the prototype.
+Four human-centered design techniques were used: interviews, secondary research, storyboarding, and usability testing. People were included throughout the design process and their feedback incorporated into each iteration of the prototype.
 
 1. Three interviews were conducted with a social worker and parents to gain insight into  foster care management and parents’ concerns while designing the tool.
 
@@ -38,7 +40,7 @@ Four human-centered design techniques were used: Interviews, secondary research,
 
 4. Two usability testing sessions were held one week apart with five participants to evaluate the users’ ability to navigate to different pages and easily understand the information presented. Participants were given prompts to complete using the tool, while the team collected metrics and qualitative feedback.
 
-Design style guide: Bootstrap was used as the library for the front-end framework to ensure a responsive and mobile-first design. Style guide can be found at http://getbootstrap.com/ and comprehensive design specifications can be found in “core.css” in the repository.
+Design style guide: [Bootstrap](http://getbootstrap.com/) was used as the grid system and component library to ensure a consistent and responsive design. A [Bootswatch](http://bootswatch.com/) template was then used to better match the CHHS color scheme.
 
 ### Agile development approach:
 

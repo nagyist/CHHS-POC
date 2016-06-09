@@ -20,13 +20,13 @@ define(['knockout', 'jquery', 'currentuser'], function (ko, $, currentuser) {
         data: ko.toJSON(message)
       })
         .done(function(){
-          console.log('updated unread field');
+          // console.log('updated unread field');
         })
         .fail(function(req, status, err){
           console.log(err);
         })
         .always(function(){
-          console.log('completed openMessage');
+          // console.log('completed openMessage');
         });
     };
 

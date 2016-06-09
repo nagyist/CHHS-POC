@@ -1,14 +1,10 @@
-<!-- <div class="btn-group" role="group">
-  <button data-bind="visible: isViewingSentMessages, click: $parent.trashSentButton" type="submit" class="btn btn-default">Trash</button>
-  <button data-bind="visible: isReadingSentMessage, click: function() {isViewingSentMessages(true); isReadingSentMessage(false)}" type="submit" class="btn btn-default">Go back</button>
-</div>
- -->
+
 <!-- Display SENT message -->
 <div id="readSentMessage" data-bind="if: isReadingSentMessage" >
   <div class="panel panel-default" style="height: 500px">
     <div class="panel-heading">
         <h3 class="panel-title"><span data-bind="text: messageToRead().subject"></span>
-        <div data-bind="visible: isReadingSentMessage, click: function() {isViewingSentMessages(true); isReadingSentMessage(false)}" class="glyphicon glyphicon-arrow-left pull-right" style="cursor: pointer"></div></h3>
+        <div data-bind="visible: isReadingSentMessage, click: function() {isViewingSentMessages(true); isReadingSentMessage(false)}" class="fa fa-arrow-left pull-right" style="cursor: pointer"></div></h3>
         <div class="clearfix"></div>
         </br>
         From: <span data-bind="text: messageToRead().from"></span> </br> 
