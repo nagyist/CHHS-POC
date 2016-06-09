@@ -8,7 +8,7 @@
       <!-- User's Profile Info -->
       <div class="panel-heading">
         <h3 class="panel-title"> <span data-bind="text: currentuser.firstname"></span> <span data-bind="text: currentuser.lastname"></span>  
-          <div class="glyphicon glyphicon-pencil pull-right" style="cursor: pointer" data-bind="click: openUserModal"></div>
+          <div class="fa fa-pencil pull-right" style="cursor: pointer" data-bind="click: openUserModal"></div>
         </h3>
         <div class="clearfix"></div>
       </div>
@@ -33,7 +33,7 @@
   	<div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Child Information
-        <div class="glyphicon glyphicon-plus pull-right" style="cursor: pointer" data-bind="click: addChild" ></div>
+        <div class="fa fa-plus pull-right" style="cursor: pointer" data-bind="click: addChild" ></div>
         </h3>
       </div>
       <!-- for each child -->
@@ -41,8 +41,8 @@
           <div class="panel panel-default" style="border: 0; box-shadow: none; border-bottom: 1px solid #ddd;margin: 0" >
             <div class="panel-body">
               <h5 class="pull-left"><span data-bind="text:firstname"></span> <span data-bind="text:lastname"> </span> </h5>
-              <div class="glyphicon glyphicon-pencil pull-right " style="cursor: pointer; margin-left:10px" data-bind="click: $parent.openChildModal"></div>
-              <div class="glyphicon glyphicon-trash pull-right" style="cursor:pointer" data-bind="click: $parent.removeChild"></div>
+              <div class="fa fa-pencil pull-right " style="cursor: pointer; margin-left:10px" data-bind="click: $parent.openChildModal"></div>
+              <div class="fa fa-trash pull-right" style="cursor:pointer" data-bind="click: $parent.removeChild"></div>
               <div class="clearfix"></div>
               Birthday: <span data-bind="date:{value:birthday, format:'MM/DD/YYYY'}"> </span> </br>
               Phone: <span data-bind="text:phone"> </span> </br>
@@ -63,15 +63,15 @@
     <!-- Family Information -->
       <div class="panel-heading">
         <h3 class="panel-title">Additional Caretakers
-        <div class="glyphicon glyphicon-plus pull-right" style="cursor: pointer" data-bind="click: addFamily" ></div>
+        <div class="fa fa-plus pull-right" style="cursor: pointer" data-bind="click: addFamily" ></div>
         </h3>
       </div>
       <div class="panel-body" data-bind="foreach: familyInfo" style="padding: 0;">
           <div class="panel panel-default" style="border: 0; box-shadow: none; border-bottom: 1px solid #ddd;margin: 0">
             <div class="panel-body">
               <h5 class=" pull-left"><span data-bind="text:firstname"></span> <span data-bind="text:lastname"> </span> </h5>
-              <div class="glyphicon glyphicon-pencil pull-right" style="cursor: pointer; margin-left:10px" data-bind="click: $parent.openFamilyModal"></div>
-              <div class="glyphicon glyphicon-trash pull-right" style="cursor:pointer" data-bind="click: $parent.removeFamily"></div>
+              <div class="fa fa-pencil pull-right" style="cursor: pointer; margin-left:10px" data-bind="click: $parent.openFamilyModal"></div>
+              <div class="fa fa-trash pull-right" style="cursor:pointer" data-bind="click: $parent.removeFamily"></div>
               <div class="clearfix"></div>
               Relation: <span data-bind="text:relationToUser"> </span> </br>
               Email: <span data-bind="text:email"> </span> </br>
