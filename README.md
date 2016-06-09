@@ -2,7 +2,7 @@
 
 Prototype URL: [https://protected-temple-25733.herokuapp.com](https://protected-temple-25733.herokuapp.com/)
 
-Developed for CHHS RFI-75001
+Developed for CHHS ADPQ RFI-75001
 
 This project is licensed under the terms of the GPLv3 license.
 
