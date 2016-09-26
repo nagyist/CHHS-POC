@@ -88,7 +88,7 @@ To interact with your containers (example: repo_web_1), open up a new terminal
 
 ## Heroku hosting
 
-The app is hosted on Heroku at [https://protected-temple-25733.herokuapp.com](https://protected-temple-25733.herokuapp.com). The app is currently set up to use a mLab MongoDB sandbox, which is linked from the app page in Heroku.
+The app was hosted on Heroku at [https://protected-temple-25733.herokuapp.com](https://protected-temple-25733.herokuapp.com). The app was set up to use a mLab MongoDB sandbox, which was linked from the app page in Heroku. The site can be made available again on request (see Questions below).
 
 A number of environment variables have been set in the Heroku settings page, specifically:
 
