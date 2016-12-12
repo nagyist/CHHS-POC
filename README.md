@@ -108,4 +108,4 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 ## Questions?
 
-Contact [Ed Olson-Morgan](mailto:Edmund.Olson-Morgan@oliverwyman.com).
+Contact [Charles Franklin](mailto:Charles.Franklin@oliverwyman.com) and [Connie Cheung](mailto:Connie.Cheung@oliverwyman.com).
